@@ -108,6 +108,7 @@ class Encrypted extends \Magento\Framework\App\Config\Value implements
      */
     public function processValue($value)
     {
+        return $value;
         return $this->_encryptor->decrypt($value);
     }
 }

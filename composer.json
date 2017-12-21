@@ -8,11 +8,21 @@
         "AFL-3.0"
     ],
     "config": {
-        "preferred-install": "dist",
+        "preferred-install": "source",
         "sort-packages": true
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:magento-architects/php-redis-session-abstract.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:magento-architects/composer.git"
+        }
+    ],
     "require": {
-        "php": "7.0.2|7.0.4|~7.0.6|~7.1.0",
+        "php": "7.0.2|7.0.4|~7.0.6|~7.1.0|~7.2.0",
         "ext-ctype": "*",
         "ext-curl": "*",
         "ext-dom": "*",
@@ -34,14 +44,14 @@
         "colinmollenhour/cache-backend-file": "1.4",
         "colinmollenhour/cache-backend-redis": "1.10.2",
         "colinmollenhour/credis": "1.6",
-        "colinmollenhour/php-redis-session-abstract": "~1.2.2",
+        "magento-architects/php-redis-session-abstract": "dev-master",
         "composer/composer": "1.4.1",
-        "magento/composer": "~1.2.0",
+        "magento-architects/composer": "dev-master",
         "magento/magento-composer-installer": ">=0.1.11",
         "magento/zendframework1": "~1.13.0",
         "monolog/monolog": "^1.17",
         "oyejorge/less.php": "~1.7.0",
-        "pelago/emogrifier": "1.2.0",
+        "pelago/emogrifier": "dev-master",
         "phpseclib/phpseclib": "2.0.*",
         "ramsey/uuid": "3.6.1",
         "sjparkinson/static-review": "~4.1",
@@ -265,5 +275,6 @@
             "Magento\\TestFramework\\Utility\\": "dev/tests/static/framework/Magento/TestFramework/Utility/"
         }
     },
-    "prefer-stable": true
+    "prefer-stable": true,
+    "minimum-stability": "dev"
 }

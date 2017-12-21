@@ -126,7 +126,7 @@ class SessionManager implements SessionManagerInterface
         $this->appState = $appState;
 
         // Enable session.use_only_cookies
-        ini_set('session.use_only_cookies', '1');
+//        ini_set('session.use_only_cookies', '1');
         $this->start();
     }
 

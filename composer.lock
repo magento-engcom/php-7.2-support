@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3dcd18a37314873eaff1bf100b435fd3",
-    "content-hash": "9ef57c4b5930ccacf5a8320275f62783",
+    "hash": "af21ecf3741195901bea4838ea12e59e",
+    "content-hash": "58c46389bc82f602b357e34510072886",
     "packages": [
         {
             "name": "braintree/braintree_php",
@@ -164,43 +164,6 @@
             "description": "Credis is a lightweight interface to the Redis key-value store which wraps the phpredis library when available for better performance.",
             "homepage": "https://github.com/colinmollenhour/credis",
             "time": "2015-11-28 01:20:04"
-        },
-        {
-            "name": "colinmollenhour/php-redis-session-abstract",
-            "version": "v1.2.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/colinmollenhour/php-redis-session-abstract.git",
-                "reference": "46968f06eeed7d16e8476d8a1397e224047ac6ff"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/colinmollenhour/php-redis-session-abstract/zipball/46968f06eeed7d16e8476d8a1397e224047ac6ff",
-                "reference": "46968f06eeed7d16e8476d8a1397e224047ac6ff",
-                "shasum": ""
-            },
-            "require": {
-                "colinmollenhour/credis": "1.6",
-                "php": "~5.5.0|~5.6.0|~7.0.0|~7.1.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Cm\\RedisSession\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Colin Mollenhour"
-                }
-            ],
-            "description": "A Redis-based session handler with optimistic locking",
-            "homepage": "https://github.com/colinmollenhour/php-redis-session-abstract",
-            "time": "2017-04-19 14:21:43"
         },
         {
             "name": "composer/ca-bundle",
@@ -605,22 +568,22 @@
             "time": "2015-01-18 14:31:58"
         },
         {
-            "name": "magento/composer",
-            "version": "1.2.0",
+            "name": "magento-architects/composer",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/magento/composer.git",
-                "reference": "130753af2b755f1967e253deb661225942bb302c"
+                "url": "https://github.com/magento-architects/composer.git",
+                "reference": "9b1e99fd0024744298d6da3dd1636f02dbe9feab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/magento/composer/zipball/130753af2b755f1967e253deb661225942bb302c",
-                "reference": "130753af2b755f1967e253deb661225942bb302c",
+                "url": "https://api.github.com/repos/magento-architects/composer/zipball/9b1e99fd0024744298d6da3dd1636f02dbe9feab",
+                "reference": "9b1e99fd0024744298d6da3dd1636f02dbe9feab",
                 "shasum": ""
             },
             "require": {
                 "composer/composer": "1.4.1",
-                "php": "~5.5.0|~5.6.0|~7.0.0|~7.1.0",
+                "php": "~5.5.0|~5.6.0|~7.0.0|~7.1.0|~7.2.0",
                 "symfony/console": "~2.3, !=2.7.0"
             },
             "require-dev": {
@@ -632,13 +595,54 @@
                     "Magento\\Composer\\": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "OSL-3.0",
                 "AFL-3.0"
             ],
             "description": "Magento composer library helps to instantiate Composer application and run composer commands.",
-            "time": "2017-04-24 09:57:02"
+            "support": {
+                "source": "https://github.com/magento-architects/composer/tree/master"
+            },
+            "time": "2017-12-21 03:04:13"
+        },
+        {
+            "name": "magento-architects/php-redis-session-abstract",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/magento-architects/php-redis-session-abstract.git",
+                "reference": "7767ade8cad38e88644308795dffd9621efa12c9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/magento-architects/php-redis-session-abstract/zipball/7767ade8cad38e88644308795dffd9621efa12c9",
+                "reference": "7767ade8cad38e88644308795dffd9621efa12c9",
+                "shasum": ""
+            },
+            "require": {
+                "colinmollenhour/credis": "~1.6",
+                "php": "~5.5.0|~5.6.0|~7.0.0|~7.1.0|~7.2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Cm\\RedisSession\\": "src/"
+                }
+            },
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Colin Mollenhour"
+                }
+            ],
+            "description": "A Redis-based session handler with optimistic locking",
+            "homepage": "https://github.com/colinmollenhour/php-redis-session-abstract",
+            "support": {
+                "source": "https://github.com/magento-architects/php-redis-session-abstract/tree/master"
+            },
+            "time": "2017-12-21 03:01:39"
         },
         {
             "name": "magento/magento-composer-installer",
@@ -956,24 +960,24 @@
         },
         {
             "name": "pelago/emogrifier",
-            "version": "V1.2.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jjriv/emogrifier.git",
-                "reference": "a1db453bb504597d821efcc04b21c79a6021e00c"
+                "url": "https://github.com/MyIntervals/emogrifier.git",
+                "reference": "097c5841b66cada54d3e9bd960b52c659f447d6b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jjriv/emogrifier/zipball/a1db453bb504597d821efcc04b21c79a6021e00c",
-                "reference": "a1db453bb504597d821efcc04b21c79a6021e00c",
+                "url": "https://api.github.com/repos/MyIntervals/emogrifier/zipball/097c5841b66cada54d3e9bd960b52c659f447d6b",
+                "reference": "097c5841b66cada54d3e9bd960b52c659f447d6b",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4.0,<=7.1.99"
+                "php": "^5.5.0 || ~7.0.0 || ~7.1.0 || ~7.2.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "4.8.27",
-                "squizlabs/php_codesniffer": "2.6.0"
+                "squizlabs/php_codesniffer": "3.1.1"
             },
             "type": "library",
             "extra": {
@@ -1011,8 +1015,13 @@
                 }
             ],
             "description": "Converts CSS styles into inline style attributes in your HTML code",
-            "homepage": "http://www.pelagodesign.com/sidecar/emogrifier/",
-            "time": "2017-03-02 12:51:48"
+            "homepage": "https://www.myintervals.com/emogrifier.php",
+            "keywords": [
+                "css",
+                "email",
+                "pre-processing"
+            ],
+            "time": "2017-11-28 10:18:47"
         },
         {
             "name": "phpseclib/phpseclib",
@@ -2068,27 +2077,27 @@
         },
         {
             "name": "zendframework/zend-code",
-            "version": "3.1.0",
+            "version": "3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-code.git",
-                "reference": "2899c17f83a7207f2d7f53ec2f421204d3beea27"
+                "reference": "6b1059db5b368db769e4392c6cb6cc139e56640d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-code/zipball/2899c17f83a7207f2d7f53ec2f421204d3beea27",
-                "reference": "2899c17f83a7207f2d7f53ec2f421204d3beea27",
+                "url": "https://api.github.com/repos/zendframework/zend-code/zipball/6b1059db5b368db769e4392c6cb6cc139e56640d",
+                "reference": "6b1059db5b368db769e4392c6cb6cc139e56640d",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.6 || 7.0.0 - 7.0.4 || ^7.0.6",
+                "php": "^7.1",
                 "zendframework/zend-eventmanager": "^2.6 || ^3.0"
             },
             "require-dev": {
                 "doctrine/annotations": "~1.0",
                 "ext-phar": "*",
-                "phpunit/phpunit": "^4.8.21",
-                "squizlabs/php_codesniffer": "^2.5",
+                "phpunit/phpunit": "^6.2.3",
+                "zendframework/zend-coding-standard": "^1.0.0",
                 "zendframework/zend-stdlib": "^2.7 || ^3.0"
             },
             "suggest": {
@@ -2098,8 +2107,8 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.1-dev",
-                    "dev-develop": "3.2-dev"
+                    "dev-master": "3.2-dev",
+                    "dev-develop": "3.3-dev"
                 }
             },
             "autoload": {
@@ -2117,7 +2126,7 @@
                 "code",
                 "zf2"
             ],
-            "time": "2016-10-24 13:23:32"
+            "time": "2017-10-20 15:21:32"
         },
         {
             "name": "zendframework/zend-config",
@@ -3918,32 +3927,32 @@
     "packages-dev": [
         {
             "name": "doctrine/instantiator",
-            "version": "1.0.5",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/instantiator.git",
-                "reference": "8e884e78f9f0eb1329e445619e04456e64d8051d"
+                "reference": "185b8868aa9bf7159f5f953ed5afb2d7fcdc3bda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/instantiator/zipball/8e884e78f9f0eb1329e445619e04456e64d8051d",
-                "reference": "8e884e78f9f0eb1329e445619e04456e64d8051d",
+                "url": "https://api.github.com/repos/doctrine/instantiator/zipball/185b8868aa9bf7159f5f953ed5afb2d7fcdc3bda",
+                "reference": "185b8868aa9bf7159f5f953ed5afb2d7fcdc3bda",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3,<8.0-DEV"
+                "php": "^7.1"
             },
             "require-dev": {
                 "athletic/athletic": "~0.1.8",
                 "ext-pdo": "*",
                 "ext-phar": "*",
-                "phpunit/phpunit": "~4.0",
-                "squizlabs/php_codesniffer": "~2.0"
+                "phpunit/phpunit": "^6.2.3",
+                "squizlabs/php_codesniffer": "^3.0.2"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "1.2.x-dev"
                 }
             },
             "autoload": {
@@ -3968,7 +3977,7 @@
                 "constructor",
                 "instantiate"
             ],
-            "time": "2015-06-14 21:17:01"
+            "time": "2017-07-22 11:58:36"
         },
         {
             "name": "friendsofphp/php-cs-fixer",
@@ -6299,14 +6308,17 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {
+        "magento-architects/php-redis-session-abstract": 20,
+        "magento-architects/composer": 20,
+        "pelago/emogrifier": 20,
         "phpmd/phpmd": 0
     },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "7.0.2|7.0.4|~7.0.6|~7.1.0",
+        "php": "7.0.2|7.0.4|~7.0.6|~7.1.0|~7.2.0",
         "ext-ctype": "*",
         "ext-curl": "*",
         "ext-dom": "*",

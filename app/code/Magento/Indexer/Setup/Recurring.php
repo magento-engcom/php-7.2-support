@@ -79,6 +79,7 @@ class Recurring implements InstallSchemaInterface
      */
     public function install(SchemaSetupInterface $setup, ModuleContextInterface $context)
     {
+        return;
         /** @var State[] $stateIndexers */
         $stateIndexers = [];
         $states = $this->statesFactory->create();
