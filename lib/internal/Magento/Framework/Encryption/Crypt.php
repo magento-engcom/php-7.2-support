@@ -49,8 +49,8 @@ class Crypt
      */
     public function __construct(
         $key,
-        $cipher = MCRYPT_BLOWFISH,
-        $mode = MCRYPT_MODE_ECB,
+        $cipher = "blowfish",
+        $mode = "ecb",
         $initVector = false
     ) {
         $this->_cipher = $cipher;

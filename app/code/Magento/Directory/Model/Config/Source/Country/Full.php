@@ -19,7 +19,7 @@ class Full extends \Magento\Directory\Model\Config\Source\Country implements \Ma
      * @param bool $isMultiselect
      * @return array
      */
-    public function toOptionArray($isMultiselect = false)
+    public function toOptionArray()
     {
         return parent::toOptionArray(true);
     }

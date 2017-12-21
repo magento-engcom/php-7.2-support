@@ -16,11 +16,13 @@ class Country extends \Magento\Directory\Model\Config\Source\Country
      * @param bool $noEmpty
      * @return array
      */
-    public function toOptionArray($noEmpty = false)
+    public function toOptionArray()
     {
-        $options = parent::toOptionArray($noEmpty);
+        $args = func_get_args();
+        $isMultiselect = isset($args[0]) ? $args[0] : false;
+        $options = parent::toOptionArray($isMultiselect);
 
-        if (!$noEmpty) {
+        if (!$isMultiselect) {
             if ($options) {
                 $options[0]['label'] = __('None');
             } else {

@@ -42,8 +42,11 @@ class Country implements \Magento\Framework\Option\ArrayInterface
      * @param string|array $foregroundCountries
      * @return array
      */
-    public function toOptionArray($isMultiselect = false, $foregroundCountries = '')
+    public function toOptionArray()
     {
+        $args = func_get_args();
+        $isMultiselect = isset($args[0]) ? $args[0] : false;
+        $foregroundCountries = isset($args[1]) ? $args[1] : '';
         if (!$this->_options) {
             $this->_options = $this->_countryCollection->loadData()->setForegroundCountries(
                 $foregroundCountries

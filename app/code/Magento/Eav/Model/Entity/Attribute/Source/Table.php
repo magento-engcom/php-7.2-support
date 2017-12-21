@@ -56,7 +56,51 @@ class Table extends \Magento\Eav\Model\Entity\Attribute\Source\AbstractSource
      * @param bool $defaultValues
      * @return array
      */
-    public function getAllOptions($withEmpty = true, $defaultValues = false)
+    public function getAllOptions()
+    {
+        $args = func_get_args();
+        $withEmpty = isset($args[0]) ? $args[0] : true;
+        $defaultValues = isset($args[1]) ? $args[1] : false;
+        $storeId = $this->getAttribute()->getStoreId();
+        if ($storeId === null) {
+            $storeId = $this->getStoreManager()->getStore()->getId();
+        }
+        if (!is_array($this->_options)) {
+            $this->_options = [];
+        }
+        if (!is_array($this->_optionsDefault)) {
+            $this->_optionsDefault = [];
+        }
+        $attributeId = $this->getAttribute()->getId();
+        if (!isset($this->_options[$storeId][$attributeId])) {
+            $collection = $this->_attrOptionCollectionFactory->create()->setPositionOrder(
+                'asc'
+            )->setAttributeFilter(
+                $attributeId
+            )->setStoreFilter(
+                $storeId
+            )->load();
+            $this->_options[$storeId][$attributeId] = $collection->toOptionArray();
+            $this->_optionsDefault[$storeId][$attributeId] = $collection->toOptionArray('default_value');
+        }
+        $options = $defaultValues
+            ? $this->_optionsDefault[$storeId][$attributeId]
+            : $this->_options[$storeId][$attributeId];
+        if ($withEmpty) {
+            $options = $this->addEmptyOption($options);
+        }
+
+        return $options;
+    }
+
+    /**
+     * Retrieve Full Option values array
+     *
+     * @param bool $withEmpty       Add empty option to array
+     * @param bool $defaultValues
+     * @return array
+     */
+    public function getAllOptionsExtended($withEmpty = true, $defaultValues = false)
     {
         $storeId = $this->getAttribute()->getStoreId();
         if ($storeId === null) {
