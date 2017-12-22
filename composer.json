@@ -18,6 +18,10 @@
         },
         {
             "type": "vcs",
+            "url": "git@github.com:magento-architects/zf1.git"
+        },
+        {
+            "type": "vcs",
             "url": "git@github.com:magento-architects/composer.git"
         }
     ],
@@ -41,14 +45,14 @@
         "ext-zip": "*",
         "lib-libxml": "*",
         "braintree/braintree_php": "3.22.0",
-        "colinmollenhour/cache-backend-file": "1.4",
+        "colinmollenhour/cache-backend-file": "dev-master",
         "colinmollenhour/cache-backend-redis": "1.10.2",
         "colinmollenhour/credis": "1.6",
         "magento-architects/php-redis-session-abstract": "dev-master",
         "composer/composer": "1.4.1",
         "magento-architects/composer": "dev-master",
         "magento/magento-composer-installer": ">=0.1.11",
-        "magento/zendframework1": "~1.13.0",
+        "magento-architects/zendframework1": "dev-master",
         "monolog/monolog": "^1.17",
         "oyejorge/less.php": "~1.7.0",
         "pelago/emogrifier": "dev-master",
