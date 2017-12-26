@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "60432594a7dff999e5ea1b00fa5b9144",
-    "content-hash": "c8fb9d4708eb68f5cb61287ca4e6df47",
+    "hash": "195157e7966641903642777f30c4048e",
+    "content-hash": "3ea4a2eb676d07f1bca3d7f7d3944738",
     "packages": [
         {
             "name": "braintree/braintree_php",
@@ -3032,16 +3032,16 @@
         },
         {
             "name": "zendframework/zend-mail",
-            "version": "2.8.0",
+            "version": "2.8.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/zendframework/zend-mail.git",
-                "reference": "248230940ab1453b2a532a8fde76c5a6470d7aad"
+                "url": "https://github.com/magento-architects/zend-mail.git",
+                "reference": "96865447ab9b721c58083ea54ea998f9246a6d6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-mail/zipball/248230940ab1453b2a532a8fde76c5a6470d7aad",
-                "reference": "248230940ab1453b2a532a8fde76c5a6470d7aad",
+                "url": "https://api.github.com/repos/magento-architects/zend-mail/zipball/96865447ab9b721c58083ea54ea998f9246a6d6d",
+                "reference": "96865447ab9b721c58083ea54ea998f9246a6d6d",
                 "shasum": ""
             },
             "require": {
@@ -3080,7 +3080,32 @@
                     "Zend\\Mail\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "ZendTest\\Mail\\": "test/"
+                }
+            },
+            "scripts": {
+                "check": [
+                    "@cs-check",
+                    "@test"
+                ],
+                "cs-check": [
+                    "phpcs"
+                ],
+                "cs-fix": [
+                    "phpcbf"
+                ],
+                "test": [
+                    "phpunit --colors=always"
+                ],
+                "test-coverage": [
+                    "phpunit --colors=always --coverage-clover clover.xml"
+                ],
+                "upload-coverage": [
+                    "coveralls -v"
+                ]
+            },
             "license": [
                 "BSD-3-Clause"
             ],
@@ -3090,7 +3115,10 @@
                 "mail",
                 "zf2"
             ],
-            "time": "2017-06-08 20:03:58"
+            "support": {
+                "source": "https://github.com/magento-architects/zend-mail/tree/release-2.8.1"
+            },
+            "time": "2017-12-26 22:12:25"
         },
         {
             "name": "zendframework/zend-math",

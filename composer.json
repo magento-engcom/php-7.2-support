@@ -23,6 +23,10 @@
         {
             "type": "vcs",
             "url": "git@github.com:magento-architects/composer.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:magento-architects/zend-mail.git"
         }
     ],
     "require": {

@@ -69,7 +69,7 @@ class AddToCart implements ObserverInterface
         $sharedWishlist = $this->checkoutSession->getSharedWishlist();
         $messages = $this->checkoutSession->getWishlistPendingMessages();
         $urls = $this->checkoutSession->getWishlistPendingUrls();
-        $wishlistIds = $this->checkoutSession->getWishlistIds();
+        $wishlistIds = (array)$this->checkoutSession->getWishlistIds();
         $singleWishlistId = $this->checkoutSession->getSingleWishlistId();
 
         if ($singleWishlistId) {
