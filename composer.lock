@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "765b553e7704d91e89931a93c311c49b",
+    "content-hash": "69eb772a53d154dfc1097589df2bbbc7",
     "packages": [
         {
             "name": "braintree/braintree_php",
@@ -517,22 +517,24 @@
         },
         {
             "name": "gitonomy/gitlib",
-            "version": "v1.0.2",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/gitonomy/gitlib.git",
-                "reference": "b4b916423a2e2da631cf3b3787beb9386a7b253c"
+                "reference": "1c2b0605115786613cb517798046c8ab57c17097"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gitonomy/gitlib/zipball/b4b916423a2e2da631cf3b3787beb9386a7b253c",
-                "reference": "b4b916423a2e2da631cf3b3787beb9386a7b253c",
+                "url": "https://api.github.com/repos/gitonomy/gitlib/zipball/1c2b0605115786613cb517798046c8ab57c17097",
+                "reference": "1c2b0605115786613cb517798046c8ab57c17097",
                 "shasum": ""
             },
             "require": {
-                "symfony/process": "^2.3|^3.0"
+                "php": "^5.3 || ^7.0",
+                "symfony/process": "^2.3|^3.0|^4.0"
             },
             "require-dev": {
+                "phpunit/phpunit": "^4.8.35|^5.7",
                 "psr/log": "^1.0"
             },
             "suggest": {
@@ -567,7 +569,7 @@
             ],
             "description": "Library for accessing git",
             "homepage": "http://gitonomy.com",
-            "time": "2016-05-11T08:25:40+00:00"
+            "time": "2018-01-10T11:34:47+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -1160,25 +1162,25 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/MyIntervals/emogrifier.git",
-                "reference": "097c5841b66cada54d3e9bd960b52c659f447d6b"
+                "reference": "d104c86fab7b501a004addd2bad6fc8bf3f5333c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MyIntervals/emogrifier/zipball/097c5841b66cada54d3e9bd960b52c659f447d6b",
-                "reference": "097c5841b66cada54d3e9bd960b52c659f447d6b",
+                "url": "https://api.github.com/repos/MyIntervals/emogrifier/zipball/d104c86fab7b501a004addd2bad6fc8bf3f5333c",
+                "reference": "d104c86fab7b501a004addd2bad6fc8bf3f5333c",
                 "shasum": ""
             },
             "require": {
                 "php": "^5.5.0 || ~7.0.0 || ~7.1.0 || ~7.2.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "4.8.27",
-                "squizlabs/php_codesniffer": "3.1.1"
+                "phpunit/phpunit": "^4.8.0",
+                "squizlabs/php_codesniffer": "^3.2.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.3.x-dev"
+                    "dev-master": "2.1.x-dev"
                 }
             },
             "autoload": {
@@ -1203,11 +1205,11 @@
                 },
                 {
                     "name": "Oliver Klee",
-                    "email": "typo3-coding@oliverklee.de"
+                    "email": "github@oliverklee.de"
                 },
                 {
-                    "name": "Roman Ožana",
-                    "email": "ozana@omdesign.cz"
+                    "name": "Zoli Szabó",
+                    "email": "zoli.szabo+github@gmail.com"
                 }
             ],
             "description": "Converts CSS styles into inline style attributes in your HTML code",
@@ -1217,7 +1219,7 @@
                 "email",
                 "pre-processing"
             ],
-            "time": "2017-11-28T10:18:47+00:00"
+            "time": "2018-01-10T21:17:27+00:00"
         },
         {
             "name": "phpro/grumphp",
@@ -4681,16 +4683,16 @@
         },
         {
             "name": "friendsofphp/php-cs-fixer",
-            "version": "v2.9.0",
+            "version": "v2.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer.git",
-                "reference": "454ddbe65da6a9297446f442bad244e8a99a9a38"
+                "reference": "4f64087e35358ac3a1aec1f290193ad1457d9536"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/454ddbe65da6a9297446f442bad244e8a99a9a38",
-                "reference": "454ddbe65da6a9297446f442bad244e8a99a9a38",
+                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/4f64087e35358ac3a1aec1f290193ad1457d9536",
+                "reference": "4f64087e35358ac3a1aec1f290193ad1457d9536",
                 "shasum": ""
             },
             "require": {
@@ -4717,6 +4719,7 @@
             "require-dev": {
                 "johnkary/phpunit-speedtrap": "^1.1 || ^2.0@dev",
                 "justinrainbow/json-schema": "^5.0",
+                "keradus/cli-executor": "^1.0",
                 "mikey179/vfsstream": "^1.6",
                 "php-coveralls/php-coveralls": "^2.0",
                 "php-cs-fixer/accessible-object": "^1.0",
@@ -4736,11 +4739,12 @@
                     "PhpCsFixer\\": "src/"
                 },
                 "classmap": [
-                    "tests/Test/Assert/AssertTokensTrait.php",
                     "tests/Test/AbstractFixerTestCase.php",
                     "tests/Test/AbstractIntegrationTestCase.php",
+                    "tests/Test/Assert/AssertTokensTrait.php",
                     "tests/Test/IntegrationCase.php",
-                    "tests/Test/IntegrationCaseFactory.php"
+                    "tests/Test/IntegrationCaseFactory.php",
+                    "tests/TestCase.php"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -4758,7 +4762,7 @@
                 }
             ],
             "description": "A tool to automatically fix PHP code style",
-            "time": "2017-12-08T16:36:20+00:00"
+            "time": "2018-01-10T17:03:23+00:00"
         },
         {
             "name": "gecko-packages/gecko-php-unit",
