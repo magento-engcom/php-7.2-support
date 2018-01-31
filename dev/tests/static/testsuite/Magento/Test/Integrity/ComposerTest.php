@@ -336,7 +336,8 @@ class ComposerTest extends \PHPUnit\Framework\TestCase
             "If there are any component paths specified, then they must be reflected in 'replace' section"
         );
         $flat = $this->getFlatPathsInfo(self::$rootJson['extra']['component_paths']);
-        while (list(, list($component, $path)) = each($flat)) {
+        foreach ($flat as $item) {
+            list($component, $path) = [$item[0], $item[1]];
             $this->assertFileExists(
                 self::$root . '/' . $path,
                 "Missing or invalid component path: {$component} -> {$path}"
