@@ -18,7 +18,7 @@
         }
     ],
     "require": {
-        "php": "7.0.2|7.0.4|~7.0.6|~7.1.0|~7.2.0",
+        "php": "7.0.2|7.0.4|~7.0.6|~7.1.0",
         "ext-ctype": "*",
         "ext-curl": "*",
         "ext-dom": "*",
@@ -84,6 +84,7 @@
         "webonyx/graphql-php": "^0.11.1"
     },
     "require-dev": {
+        "php": "7.0.2|7.0.4|~7.0.6|~7.1.0|~7.2.0",
         "friendsofphp/php-cs-fixer": "~2.10.0",
         "lusitanian/oauth": "~0.8.10",
         "pdepend/pdepend": "2.5.0",
