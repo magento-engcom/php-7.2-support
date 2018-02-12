@@ -10,6 +10,9 @@
         "magento/module-checkout": "100.3.*",
         "magento/module-payment": "100.3.*"
     },
+    "require-dev": {
+        "php": "7.0.2|7.0.4|~7.0.6|~7.1.0|~7.2.0"
+    },
     "suggest": {
         "magento/module-config": "100.3.*"
     },
