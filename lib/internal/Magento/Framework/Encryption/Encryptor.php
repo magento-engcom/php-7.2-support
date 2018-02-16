@@ -399,7 +399,7 @@ class Encryptor implements EncryptorInterface
             $cipher = MCRYPT_RIJNDAEL_256;
             $mode = MCRYPT_MODE_CBC;
         } else {
-            $cipher = MCRYPT_BLOWFISH;
+            $cipher = 'blowfish';
             $mode = MCRYPT_MODE_ECB;
         }
 

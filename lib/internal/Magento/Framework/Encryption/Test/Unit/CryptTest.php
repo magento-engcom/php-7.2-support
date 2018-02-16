@@ -15,7 +15,7 @@ class CryptTest extends \PHPUnit\Framework\TestCase
 
     private static $_cipherInfo;
 
-    protected $_supportedCiphers = [MCRYPT_BLOWFISH, MCRYPT_RIJNDAEL_128, MCRYPT_RIJNDAEL_256];
+    protected $_supportedCiphers = ['blowfish', MCRYPT_RIJNDAEL_128, MCRYPT_RIJNDAEL_256];
 
     protected $_supportedModes = [
         MCRYPT_MODE_ECB,
@@ -129,7 +129,7 @@ class CryptTest extends \PHPUnit\Framework\TestCase
 
     public function testConstructorDefaults()
     {
-        $cryptExpected = new \Magento\Framework\Encryption\Crypt($this->_key, MCRYPT_BLOWFISH, MCRYPT_MODE_ECB, false);
+        $cryptExpected = new \Magento\Framework\Encryption\Crypt($this->_key, 'blowfish', MCRYPT_MODE_ECB, false);
         $cryptActual = new \Magento\Framework\Encryption\Crypt($this->_key);
 
         $this->assertEquals($cryptExpected->getCipher(), $cryptActual->getCipher());
