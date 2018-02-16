@@ -41,8 +41,8 @@ class SourceArgumentsReaderTest extends \PHPUnit\Framework\TestCase
                     '\Imported\Name\Space\One',
                     '\Imported\Name\Space\AnotherTest\Extended',
                     '\Imported\Name\Space\Test',
-                    '\Imported\Name\Space\SomeObject\Under\Test',
-                    '\Imported\Name\Space\SomeObject',
+                    '\Imported\Name\Space\ClassName\Under\Test',
+                    '\Imported\Name\Space\ClassName',
                     '\Some\Testing\Name\Space\Test',
                     'array',
                     ''
