@@ -101,7 +101,7 @@
         "lusitanian/oauth": "~0.8.10",
         "pdepend/pdepend": "2.5.0",
         "phpmd/phpmd": "@stable",
-        "phpunit/phpunit": "~6.2.0",
+        "phpunit/phpunit": "~6.5.6",
         "sebastian/phpcpd": "~3.0.1",
         "squizlabs/php_codesniffer": "3.0.1"
     },
