@@ -15,14 +15,14 @@ class CryptTest extends \PHPUnit\Framework\TestCase
 
     private static $_cipherInfo;
 
-    protected $_supportedCiphers = ['blowfish', MCRYPT_RIJNDAEL_128, MCRYPT_RIJNDAEL_256];
+    protected $_supportedCiphers = ['blowfish', 'rijndael-128', 'rijndael-256'];
 
     protected $_supportedModes = [
-        MCRYPT_MODE_ECB,
-        MCRYPT_MODE_CBC,
-        MCRYPT_MODE_CFB,
-        MCRYPT_MODE_OFB,
-        MCRYPT_MODE_NOFB,
+        'ecb',
+        'cbc',
+        'cfb',
+        'ofb',
+        'nofb',
     ];
 
     protected function setUp()

@@ -393,14 +393,14 @@ class Encryptor implements EncryptorInterface
         $cipherVersion = $this->validateCipher($cipherVersion);
 
         if ($cipherVersion === self::CIPHER_RIJNDAEL_128) {
-            $cipher = MCRYPT_RIJNDAEL_128;
-            $mode = MCRYPT_MODE_ECB;
+            $cipher = 'rijndael-128';
+            $mode = 'nofb';
         } elseif ($cipherVersion === self::CIPHER_RIJNDAEL_256) {
-            $cipher = MCRYPT_RIJNDAEL_256;
-            $mode = MCRYPT_MODE_CBC;
+            $cipher = 'rijndael-256';
+            $mode = 'nofb';
         } else {
             $cipher = 'blowfish';
-            $mode = MCRYPT_MODE_ECB;
+            $mode = 'nofb';
         }
 
         return new Crypt($key, $cipher, $mode, $initVector);
