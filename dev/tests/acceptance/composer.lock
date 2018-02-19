@@ -1057,7 +1057,7 @@
             ],
             "authors": [
                 {
-                    "name": "François Zaninotto"
+                    "name": "Fran??ois Zaninotto"
                 }
             ],
             "description": "Faker is a PHP library that generates fake data for you.",
@@ -1653,7 +1653,7 @@
                 "flow/jsonpath": ">0.2",
                 "fzaninotto/faker": "^1.6",
                 "mustache/mustache": "~2.5",
-                "php": "7.0.2|7.0.4|~7.0.6|~7.1.0"
+                "php": "7.0.2|7.0.4|~7.0.6|~7.1.0|~7.2.0"
             },
             "require-dev": {
                 "brainmaestro/composer-git-hooks": "^2.3",
@@ -3708,7 +3708,7 @@
             ],
             "authors": [
                 {
-                    "name": "Jean-François Simon",
+                    "name": "Jean-Fran??ois Simon",
                     "email": "jeanfrancois.simon@sensiolabs.com"
                 },
                 {
@@ -4426,7 +4426,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "7.0.2|7.0.4|~7.0.6|~7.1.0"
+        "php": "7.0.2|7.0.4|~7.0.6|~7.1.0|~7.2.0"
     },
     "platform-dev": []
 }
