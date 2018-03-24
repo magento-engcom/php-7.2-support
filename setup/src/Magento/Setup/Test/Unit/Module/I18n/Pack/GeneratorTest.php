@@ -94,6 +94,10 @@ class GeneratorTest extends \PHPUnit\Framework\TestCase
         $allowDuplicates = true;
         $localeMock = $this->createMock(\Magento\Setup\Module\I18n\Locale::class);
 
+        $this->dictionaryMock->expects($this->once())
+            ->method('getPhrases')
+            ->will($this->returnValue([]));
+
         $this->factoryMock->expects($this->once())
             ->method('createLocale')
             ->with($localeString)
