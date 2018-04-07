@@ -9,20 +9,22 @@
  */
 namespace Magento\Test\Event;
 
+use PHPUnit\Framework\MockObject\Matcher\Invocation;
+
 class TransactionTest extends \PHPUnit\Framework\TestCase
 {
     /**
-     * @var \Magento\TestFramework\Event\Transaction|\PHPUnit_Framework_MockObject_MockObject
+     * @var \Magento\TestFramework\Event\Transaction|\PHPUnit\Framework\MockObject\MockObject
      */
     protected $_object;
 
     /**
-     * @var \Magento\TestFramework\EventManager|\PHPUnit_Framework_MockObject_MockObject
+     * @var \Magento\TestFramework\EventManager|\PHPUnit\Framework\MockObject\MockObject
      */
     protected $_eventManager;
 
     /**
-     * @var \Magento\TestFramework\Db\Adapter\TransactionInterface|\PHPUnit_Framework_MockObject_MockObject
+     * @var \Magento\TestFramework\Db\Adapter\TransactionInterface|\PHPUnit\Framework\MockObject\MockObject
      */
     protected $_adapter;
 
@@ -69,9 +71,9 @@ class TransactionTest extends \PHPUnit\Framework\TestCase
     /**
      * Setup expectations for "transaction start" use case
      *
-     * @param \PHPUnit_Framework_MockObject_Matcher_Invocation $invocationMatcher
+     * @param Invocation $invocationMatcher
      */
-    protected function _expectTransactionStart(\PHPUnit_Framework_MockObject_Matcher_Invocation $invocationMatcher)
+    protected function _expectTransactionStart(Invocation $invocationMatcher)
     {
         $this->_eventManager->expects($invocationMatcher)->method('fireEvent')->with('startTransaction');
         $this->_adapter->expects($this->once())->method('beginTransaction');
@@ -103,9 +105,9 @@ class TransactionTest extends \PHPUnit\Framework\TestCase
     /**
      * Setup expectations for "transaction rollback" use case
      *
-     * @param \PHPUnit_Framework_MockObject_Matcher_Invocation $invocationMatcher
+     * @param Invocation $invocationMatcher
      */
-    protected function _expectTransactionRollback(\PHPUnit_Framework_MockObject_Matcher_Invocation $invocationMatcher)
+    protected function _expectTransactionRollback(Invocation $invocationMatcher)
     {
         $this->_eventManager->expects($invocationMatcher)->method('fireEvent')->with('rollbackTransaction');
         $this->_adapter->expects($this->once())->method('rollback');
