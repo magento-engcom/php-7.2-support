@@ -11,6 +11,7 @@ class LinkTest extends \PHPUnit\Framework\TestCase
      * @var array
      */
     protected $allowedAttributes = [
+        'href',
         'shape',
         'tabindex',
         'onfocus',
@@ -51,7 +52,7 @@ class LinkTest extends \PHPUnit\Framework\TestCase
 
         $urlBuilderMock->expects($this->any())
             ->method('getUrl')
-            ->will($this->returnArgument('http://site.com/link.html'));
+            ->will($this->returnValue('http://site.com/link.html'));
 
         $validtorMock = $this->getMockBuilder(\Magento\Framework\View\Element\Template\File\Validator::class)
             ->setMethods(['isValid'])->disableOriginalConstructor()->getMock();
@@ -105,11 +106,11 @@ class LinkTest extends \PHPUnit\Framework\TestCase
         return [
             'full' => [
                 'link' => $linkWithAttributes,
-                'expected' => 'shape="shape" tabindex="tabindex" onfocus="onfocus" onblur="onblur" id="id"',
+                'expected' => 'href="http://site.com/link.html" shape="shape" tabindex="tabindex" onfocus="onfocus" onblur="onblur" id="id"',
             ],
             'empty' => [
                 'link' => $linkWithoutAttributes,
-                'expected' => '',
+                'expected' => 'href="http://site.com/link.html"',
             ],
         ];
     }
