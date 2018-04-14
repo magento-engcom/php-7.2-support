@@ -103,10 +103,13 @@ class LinkTest extends \PHPUnit\Framework\TestCase
             $linkWithAttributes->setDataUsingMethod($attribute, $attribute);
         }
 
+        $expectedFull  = 'href="http://site.com/link.html" shape="shape" ';
+        $expectedFull .= 'tabindex="tabindex" onfocus="onfocus" onblur="onblur" id="id"';
+
         return [
             'full' => [
                 'link' => $linkWithAttributes,
-                'expected' => 'href="http://site.com/link.html" shape="shape" tabindex="tabindex" onfocus="onfocus" onblur="onblur" id="id"',
+                'expected' => $expectedFull,
             ],
             'empty' => [
                 'link' => $linkWithoutAttributes,
