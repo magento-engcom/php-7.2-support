@@ -28,7 +28,7 @@ class MethodInvokedAtIndex implements \PHPUnit\Framework\MockObject\Matcher\Invo
      */
     protected $indexes = [];
 
-    /**
+    /**PHPUnit_Framework_MockObject_Matcher_InvokedAtIndex
      * @var int
      */
     private $currentIndex = -1;
@@ -95,6 +95,7 @@ class MethodInvokedAtIndex implements \PHPUnit\Framework\MockObject\Matcher\Invo
     /**
      * @param Invocation $invocation Object containing information on a mocked or stubbed method which was invoked
      * @return mixed
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
     public function invoked(Invocation $invocation)
     {
