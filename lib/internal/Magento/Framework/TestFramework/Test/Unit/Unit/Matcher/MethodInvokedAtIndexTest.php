@@ -6,12 +6,13 @@
 namespace Magento\Framework\TestFramework\Test\Unit\Unit\Matcher;
 
 use Magento\Framework\TestFramework\Unit\Matcher\MethodInvokedAtIndex;
+use PHPUnit\Framework\MockObject\Invocation\ObjectInvocation;
 
 class MethodInvokedAtIndexTest extends \PHPUnit\Framework\TestCase
 {
     public function testMatches()
     {
-        $invocationObject = new \PHPUnit_Framework_MockObject_Invocation_Object(
+        $invocationObject = new ObjectInvocation(
             'ClassName',
             'ValidMethodName',
             [],

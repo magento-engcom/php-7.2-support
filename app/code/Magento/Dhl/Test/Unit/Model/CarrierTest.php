@@ -366,8 +366,8 @@ class CarrierTest extends \PHPUnit\Framework\TestCase
 
         $request = new RateRequest();
         $request->setPackageWeight(1);
-
-        $this->assertFalse(false, $this->model->collectRates($request));
+        
+        $this->assertTrue($this->model->collectRates($request)->getError());
     }
 
     /**

@@ -6,6 +6,9 @@
 
 namespace Magento\Framework\TestFramework\Unit\Matcher;
 
+use PHPUnit\Framework\ExpectationFailedException;
+use PHPUnit\Framework\MockObject\Invocation;
+
 /**
  * Class MethodInvokedAtIndex
  * Matches invocations per 'method' at 'position'
@@ -18,30 +21,83 @@ namespace Magento\Framework\TestFramework\Unit\Matcher;
  *
  * @package Magento\TestFramework\Matcher
  */
-class MethodInvokedAtIndex extends \PHPUnit_Framework_MockObject_Matcher_InvokedAtIndex
+class MethodInvokedAtIndex implements \PHPUnit\Framework\MockObject\Matcher\Invocation
 {
     /**
      * @var array
      */
     protected $indexes = [];
 
+    /**PHPUnit_Framework_MockObject_Matcher_InvokedAtIndex
+     * @var int
+     */
+    private $currentIndex = -1;
+
     /**
-     * @param  \PHPUnit_Framework_MockObject_Invocation $invocation
+     * @var int
+     */
+    private $sequenceIndex;
+
+    /**
+     * @param int $sequenceIndex
+     */
+    public function __construct($sequenceIndex)
+    {
+        $this->sequenceIndex = $sequenceIndex;
+    }
+
+    /**
+     * @return string
+     */
+    public function toString(): string
+    {
+        return 'invoked at sequence index ' . $this->sequenceIndex;
+    }
+
+    /**
+     * @param  \PHPUnit\Framework\MockObject\Invocation $invocation
      * @return boolean
      */
-    public function matches(\PHPUnit_Framework_MockObject_Invocation $invocation)
+    public function matches(Invocation $invocation): bool
     {
         /** @noinspection PhpUndefinedFieldInspection */
-        if (!isset($this->indexes[$invocation->methodName])) {
+        if (!isset($this->indexes[$invocation->getMethodName()])) {
             /** @noinspection PhpUndefinedFieldInspection */
-            $this->indexes[$invocation->methodName] = 0;
+            $this->indexes[$invocation->getMethodName()] = 0;
         } else {
             /** @noinspection PhpUndefinedFieldInspection */
-            $this->indexes[$invocation->methodName]++;
+            $this->indexes[$invocation->getMethodName()]++;
         }
         $this->currentIndex++;
 
         /** @noinspection PhpUndefinedFieldInspection */
-        return $this->indexes[$invocation->methodName] == $this->sequenceIndex;
+        return $this->indexes[$invocation->getMethodName()] === $this->sequenceIndex;
+    }
+
+    /**
+     * Verifies that the current expectation is valid. If everything is OK the
+     * code should just return, if not it must throw an exception.
+     *
+     * @throws ExpectationFailedException
+     */
+    public function verify(): void
+    {
+        if ($this->currentIndex < $this->sequenceIndex) {
+            throw new ExpectationFailedException(
+                \sprintf(
+                    'The expected invocation at index %s was never reached.',
+                    $this->sequenceIndex
+                )
+            );
+        }
+    }
+
+    /**
+     * @param Invocation $invocation Object containing information on a mocked or stubbed method which was invoked
+     * @return mixed
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     */
+    public function invoked(Invocation $invocation)
+    {
     }
 }
