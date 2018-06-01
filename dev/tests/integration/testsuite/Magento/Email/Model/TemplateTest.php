@@ -8,7 +8,7 @@ namespace Magento\Email\Model;
 use Magento\Backend\App\Area\FrontNameResolver as BackendFrontNameResolver;
 use Magento\Framework\App\Area;
 use Magento\Framework\App\Filesystem\DirectoryList;
-use Magento\Framework\App\TemplateTypesInterface;
+use Magento\Framework\App\TemplateTypesInterface;;
 use Magento\Framework\View\DesignInterface;
 use Magento\Store\Model\ScopeInterface;
 use Magento\Store\Model\Store;
@@ -25,9 +25,9 @@ class TemplateTest extends \PHPUnit\Framework\TestCase
     protected $model;
 
     /**
-     * @var \Zend_Mail|\PHPUnit_Framework_MockObject_MockObject
+     * @var \Magento\Framework\Mail\Message|\PHPUnit_Framework_MockObject_MockObject
      */
-    protected $mail;
+    protected $message;
 
     /**
      * @var \Magento\Framework\ObjectManagerInterface
@@ -45,8 +45,8 @@ class TemplateTest extends \PHPUnit\Framework\TestCase
             $filesystem = $this->objectManager->create(\Magento\Framework\Filesystem::class);
         }
 
-        $this->mail = $this->getMockBuilder(\Zend_Mail::class)
-            ->setMethods(['send', 'addTo', 'addBcc', 'setReturnPath', 'setReplyTo'])
+        $this->message = $this->getMockBuilder(\Magento\Framework\Mail\Message::class)
+            ->setMethods(['addTo', 'addBcc', 'setReplyTo'])
             ->setConstructorArgs(['utf-8'])
             ->getMock();
 
@@ -71,18 +71,18 @@ class TemplateTest extends \PHPUnit\Framework\TestCase
 
         $this->objectManager->get(\Magento\Framework\App\State::class)->setAreaCode('frontend');
 
-        $this->model->expects($this->any())->method('_getMail')->will($this->returnCallback([$this, 'getMail']));
+        $this->model->expects($this->any())->method('_getMail')->will($this->returnCallback([$this, 'getMessage']));
         $this->model->setSenderName('sender')->setSenderEmail('sender@example.com')->setTemplateSubject('Subject');
     }
 
     /**
-     * Return a disposable \Zend_Mail instance
+     * Return a disposable \Magento\Framework\Mail\Message instance
      *
      * @return \PHPUnit_Framework_MockObject_MockObject|\Zend_Mail
      */
-    public function getMail()
+    public function getMessage()
     {
-        return clone $this->mail;
+        return clone $this->message;
     }
 
     public function testSetGetTemplateFilter()
